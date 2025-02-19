@@ -47,3 +47,4 @@ endif()
 
 add_subdirectory("2. Singleton")
 add_subdirectory("3. Factory Method")
+add_subdirectory("4. Abstract Factory")

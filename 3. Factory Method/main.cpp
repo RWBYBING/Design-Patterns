@@ -34,11 +34,6 @@ class Creator
 public:
     virtual std::unique_ptr<Product> createProduct() const = 0;
     virtual ~Creator() = default;
-    void someOperation() const
-    {
-        std::unique_ptr<Product> product = this->createProduct();
-        product->operation();
-    }
 };
 
 // Concrete creators
@@ -63,8 +58,8 @@ public:
 int main()
 {
     std::unique_ptr<Creator> createA = std::make_unique<ConcreteCreatorA>();
-    createA->someOperation();
+    createA->createProduct()->operation();
 
     std::unique_ptr<Creator> createB = std::make_unique<ConcreteCreatorB>();
-    createB->someOperation();
+    createB->createProduct()->operation();
 }
