@@ -53,7 +53,7 @@ private:
     int x, y, radius;
 
 public:
-    Circle(int x, int y, int radius, std::unique_ptr<DrawingAPI> drawingAPI) : x(x), y(y), radius(radius), Shape(std::move(drawingAPI)) {}
+    Circle(int x, int y, int radius, std::unique_ptr<DrawingAPI> drawingAPI) : Shape(std::move(drawingAPI)), x(x), y(y), radius(radius) {}
 
     void draw() override
     {
@@ -72,7 +72,7 @@ private:
     int x1, y1, x2, y2;
 
 public:
-    Rectangle(int x1, int y1, int x2, int y2, std::unique_ptr<DrawingAPI> drawingAPI) : x1(x1), y1(y1), x2(x2), y2(y2), Shape(std::move(drawingAPI)) {}
+    Rectangle(int x1, int y1, int x2, int y2, std::unique_ptr<DrawingAPI> drawingAPI) :  Shape(std::move(drawingAPI)), x1(x1), y1(y1), x2(x2), y2(y2) {}
 
     void draw() override {
         drawingAPI->drawRectangle(x1, y1, x2, y2);
